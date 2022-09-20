@@ -1,0 +1,128 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $header-bg;
+  color: $header-color;
+  transition: background 0.3s;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 27px 0 43px;
+  }
+
+  &__logo-tablet,
+  &__logo-mobile {
+    display: none;
+  }
+  &__logo-desktop {
+    width: 147px;
+    height: 40px;
+  }
+
+  &__logo-img {
+    width: 147px;
+    height: 40px;
+    fill: $header-color;
+    transition: fill 0.3s opacity 0.3s;
+  }
+
+  &__logo-img:hover {
+    fill: $hover-color;
+    transition: fill 0.3s;
+  }
+
+  &__logo-img:active {
+    opacity: 0.3;
+    fill: $header-color;
+    transition: fill 0.3s opacity 0.3s;
+  }
+
+  &__menu {
+    display: none;
+  }
+}
+
+@media (max-width: 660px) {
+  .header {
+    &__logo-desktop {
+      display: none;
+    }
+
+    &__logo-tablet {
+      display: block;
+    }
+
+    &__nav {
+      position: absolute;
+      right: 100%;
+      top: 110px;
+      left: 0;
+      transition: right 0.5s;
+      overflow: hidden;
+    }
+
+    &__menu {
+      display: block;
+    }
+  }
+  .header.header-nojs {
+    background: $header-active;
+    box-shadow: 0px 1px 0px #000000;
+    & .header__menu {
+      display: none;
+    }
+    & .header__wrapper {
+      align-items: center;
+      justify-content: center;
+    }
+    & .header__nav {
+      display: block;
+      right: 0;
+      top: 110px;
+    }
+  }
+  .header.header--active {
+    background: $header-active;
+    box-shadow: 0px 1px 0px #000000;
+    transition: background 0.3s;
+    & .header__nav {
+      display: block;
+      right: 0;
+      transition: right 0.5s;
+      top: 110px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .header {
+    &__wrapper {
+      padding: 22px 0 21px;
+    }
+    &__logo-tablet {
+      display: none;
+    }
+
+    &__logo-mobile {
+      display: block;
+    }
+
+    &__logo-img {
+      width: 74px;
+      height: 23px;
+    }
+    &__nav {
+      top: 66px;
+    }
+  }
+  .header.header-nojs,
+  .header.header--active {
+    & .header__nav {
+      top: 66px;
+    }
+  }
+}

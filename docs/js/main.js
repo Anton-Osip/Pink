@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".header"),t=document.querySelector(".menu"),c=document.querySelectorAll(".nav__item");e.classList.remove("header-nojs"),t.addEventListener("click",()=>{e.classList.toggle("header--active")}),c.forEach(t=>t.addEventListener("click",()=>{e.classList.remove("header--active")}))})();

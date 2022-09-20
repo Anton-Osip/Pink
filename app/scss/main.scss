@@ -1,0 +1,11 @@
+@import "variables"; //пишем переменные
+@import "reset"; //сборс стилей
+@import "fonts"; //подключаем шрифты
+@import "grid"; //подключаем сетку
+@import "style"; //подключаем общие стили
+@import "visually-hidden"; //подключаем visually-hidden
+
+//подключаем БЭМ блоки
+@import "blocks/header/header";
+@import "blocks/header/nav";
+@import "blocks/header/menu";
